@@ -1,0 +1,22 @@
+/* Background Color */
+.bg-darkBlue {
+  background-color: hsl(210, 100%, 20%);
+}
+
+/* Nav Bar */
+.navbar {
+  padding: 0;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  background-color: hsl(210, 100%, 10%);
+}
+
+/* dropdown-menu */
+.dropdown-item:hover {
+  background-color: hsl(210, 100%, 10%);
+}
