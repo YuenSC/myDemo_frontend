@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Footer from "./components/footer";
@@ -7,16 +8,18 @@ import Posts from "./components/posts";
 
 function App() {
   return (
-    <div className="container">
+    <React.Fragment>
       <NavBar />
-      <Switch>
-        <Route path="/posts" component={Posts} />
-        <Route path="/" component={Home} />
-      </Switch>
-      <div style={{ height: 500 }} />
-      <Footer />
-      <div style={{ height: 50 }} />
-    </div>
+      <div className="container">
+        <Switch>
+          <Route path="/posts" component={Posts} />
+          <Route path="/" component={Home} />
+        </Switch>
+        <div style={{ height: 1000 }} />
+        <Footer />
+        <div style={{ height: 50 }} />
+      </div>
+    </React.Fragment>
   );
 }
 
