@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import scrollToTop from "../js/scrollToTop";
 import "../styles/footer.css";
 
 class Footer extends Component {
@@ -54,10 +55,7 @@ class Footer extends Component {
       <div className="footer">
         <div class="row">
           <div class="col-sm footer__container footer__container--right">
-            <div onClick={this.scrollToTop} className="footer__link">
-              Back to the top
-              <i class="fa fa-arrow-up footer__icon" aria-hidden="true"></i>
-            </div>
+            {this.renderToTopButton()}
           </div>
         </div>
         <div class="row">
@@ -72,12 +70,14 @@ class Footer extends Component {
     );
   }
 
-  scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  renderToTopButton() {
+    return (
+      <div onClick={scrollToTop} className="footer__link">
+        Back to the top
+        <i class="fa fa-arrow-up footer__icon" aria-hidden="true"></i>
+      </div>
+    );
+  }
 
   renderFooterList(items) {
     return (
