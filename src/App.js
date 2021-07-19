@@ -1,10 +1,11 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 import Footer from "./components/footer";
 import Home from "./components/home";
 import NavBar from "./components/navbar";
 import Posts from "./components/posts";
+import Contact from "./components/contact";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <div className="container">
         <Switch>
           <Route path="/posts" component={Posts} />
-          <Route path="/" component={Home} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/" exact component={Home} />
+          <Redirect to="/" />
         </Switch>
         <div style={{ height: 1000 }} />
         <Footer />

@@ -8,7 +8,7 @@ class NavBar extends Component {
     navBarItems: [
       { label: "Home", link: "/" },
       { label: "Post", link: "/posts" },
-      { label: "Event", link: "/event" },
+      { label: "Contact", link: "/contact" },
       { label: "link", link: "/link" },
       {
         label: "myPortal",
