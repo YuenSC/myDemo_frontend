@@ -10,13 +10,15 @@ function App() {
   return (
     <React.Fragment>
       <NavBar />
-      <Switch>
-        <Route path="/posts" component={Posts} />
-        <Route path="/" component={Home} />
-      </Switch>
-      <div style={{ height: 1000 }} />
-      <Footer />
-      <div style={{ height: 50 }} />
+      <div className="container">
+        <Switch>
+          <Route path="/posts" component={Posts} />
+          <Route path="/" component={Home} />
+        </Switch>
+        <div style={{ height: 1000 }} />
+        <Footer />
+        <div style={{ height: 50 }} />
+      </div>
     </React.Fragment>
   );
 }
