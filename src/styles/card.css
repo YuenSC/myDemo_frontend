@@ -1,0 +1,34 @@
+.myCard {
+  height: 60vh;
+  margin-top: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  font-size: 1.5rem;
+}
+
+.myCard__header {
+  height: 60%;
+  position: relative;
+}
+
+.myCard__image {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s;
+  width: 100%;
+}
+
+.myCard__body {
+  padding: 1rem;
+}
+
+.myCard:hover {
+  box-shadow: 0 0 20px 10px hsl(0, 0%, 73%);
+}
+.myCard:hover .myCard__image {
+  width: 150%;
+}
