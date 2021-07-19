@@ -52,17 +52,17 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="footer container">
-        <div className="row">
-          <div className="col-sm footer__container footer__container--right">
+      <div className="footer">
+        <div class="row">
+          <div class="col-sm footer__container footer__container--right">
             {this.renderToTopButton()}
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-6 footer__container footer__container--left">
+        <div class="row">
+          <div class="col-md-6 footer__container footer__container--left">
             {this.renderFooterList(this.state.links)}
           </div>
-          <div className="col-md-6 footer__container footer__container--right">
+          <div class="col-md-6 footer__container footer__container--right">
             {this.renderFooterList(this.state.icons)}
           </div>
         </div>
@@ -74,7 +74,7 @@ class Footer extends Component {
     return (
       <div onClick={scrollToTop} className="footer__link">
         Back to the top
-        <i className="fa fa-arrow-up footer__icon" aria-hidden="true"></i>
+        <i class="fa fa-arrow-up footer__icon" aria-hidden="true"></i>
       </div>
     );
   }
@@ -84,9 +84,7 @@ class Footer extends Component {
       <ul className="footer__list">
         {items.map(({ id, label, href, noline, lineBreak, iconHref }) => {
           if (lineBreak)
-            return (
-              <li className="footer__item footer__lineBreak" key={id}></li>
-            );
+            return <li className="footer__item footer__lineBreak"></li>;
           return (
             <li
               className={"footer__item" + (noline ? " footer__noline" : "")}
