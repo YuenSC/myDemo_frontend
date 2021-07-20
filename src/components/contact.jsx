@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Contact extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <div style={{ marginTop: 30 }} className="row">
           <div className="col-3">
             <h1>Name:</h1>

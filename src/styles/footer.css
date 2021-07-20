@@ -1,3 +1,8 @@
+.footer {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
 .footer__container {
   display: flex;
   align-items: center;
@@ -21,7 +26,6 @@
 .footer__item {
   font-size: 1rem;
   display: inline-block;
-
   border-right: 1px solid black;
 }
 

@@ -52,7 +52,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="footer">
+      <div className="footer container">
         <div className="row">
           <div className="col-sm footer__container footer__container--right">
             {this.renderToTopButton()}
