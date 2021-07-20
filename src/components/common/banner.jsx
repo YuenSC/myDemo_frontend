@@ -3,10 +3,7 @@ import "../../styles/banner.css";
 
 const Banner = ({ imgSource, imgAlt, children }) => {
   return (
-    <div
-      className="banner display-1"
-      style={{ backgroundImage: `url(${imgSource})` }}
-    >
+    <div className="banner" style={{ backgroundImage: `url(${imgSource})` }}>
       {children}
     </div>
   );

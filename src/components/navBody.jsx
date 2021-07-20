@@ -5,20 +5,18 @@ class NavBody extends Component {
   render() {
     const { navBarItems } = this.props;
     return (
-      <div>
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarCollapse"
-        >
-          <ul className="navbar-nav mb-2 mb-md-0">
-            {navBarItems.map((navBarItem) => {
-              if (!navBarItem.dropDownItems) {
-                return this.renderLink(navBarItem);
-              }
-              return this.renderDropDownList(navBarItem);
-            })}
-          </ul>
-        </div>
+      <div
+        className="collapse navbar-collapse justify-content-end"
+        id="navbarCollapse"
+      >
+        <ul className="navbar-nav mb-2 mb-md-0">
+          {navBarItems.map((navBarItem) => {
+            if (!navBarItem.dropDownItems) {
+              return this.renderLink(navBarItem);
+            }
+            return this.renderDropDownList(navBarItem);
+          })}
+        </ul>
       </div>
     );
   }
