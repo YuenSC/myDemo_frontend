@@ -31,7 +31,7 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md sticky-top fs-3">
-        <div className="container justify-content-end">
+        <div className="container justify-content-end navbar__container">
           {this.getNavButton()}
           <NavBody navBarItems={this.state.navBarItems} />
         </div>
@@ -50,7 +50,7 @@ class NavBar extends Component {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <i className="fa fa-bars"></i>
       </button>
     );
   }
