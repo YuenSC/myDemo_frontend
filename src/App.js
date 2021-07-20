@@ -6,22 +6,20 @@ import Home from "./components/home";
 import NavBar from "./components/navbar";
 import Posts from "./components/posts";
 import Contact from "./components/contact";
+import scrollLib from "./js/aos";
 
 function App() {
+  scrollLib.refresh();
   return (
     <React.Fragment>
       <NavBar />
-      <div className="container">
-        <Switch>
-          <Route path="/posts" component={Posts} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/" exact component={Home} />
-          <Redirect to="/" />
-        </Switch>
-        <div style={{ height: 1000 }} />
-        <Footer />
-        <div style={{ height: 50 }} />
-      </div>
+      <Switch>
+        <Route path="/posts" component={Posts} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/" exact component={Home} />
+        <Redirect to="/" />
+      </Switch>
+      <Footer />
     </React.Fragment>
   );
 }

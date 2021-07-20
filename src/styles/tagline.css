@@ -1,0 +1,15 @@
+.tagline {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 10rem;
+}
+
+.tagline .tagline__title {
+  font-size: 10rem;
+  margin-bottom: 2rem;
+}
+.tagline .tagline__subtitle {
+  font-size: 6rem;
+}
