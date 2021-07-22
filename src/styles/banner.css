@@ -3,6 +3,27 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
+}
+
+.banner__button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 5rem;
+}
+
+@keyframes scrollDown {
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: none;
+  }
+}
+.banner__button-icon {
+  animation: scrollDown 2s infinite;
 }

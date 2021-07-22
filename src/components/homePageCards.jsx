@@ -5,7 +5,7 @@ import cards from "../services/fakeCardService";
 class HomePageCards extends Component {
   render() {
     return (
-      <div className="row">
+      <div className="row" data-aos="fade-up">
         {cards.map((card) => (
           <div className="col-12 col-md-4" key={card.id}>
             <Card
