@@ -3,14 +3,30 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 10rem;
   text-align: center;
 }
 
 .tagline .tagline__title {
-  font-size: 10rem;
-  margin-bottom: 2rem;
+  font-size: 7rem;
 }
 .tagline .tagline__subtitle {
-  font-size: 6rem;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .tagline .tagline__title {
+    font-size: 5rem;
+  }
+  .tagline .tagline__subtitle {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .tagline .tagline__title {
+    font-size: 6rem;
+  }
+  .tagline .tagline__subtitle {
+    font-size: 4rem;
+  }
 }
