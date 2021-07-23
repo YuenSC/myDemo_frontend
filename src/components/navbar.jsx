@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 import "../styles/navbar.css";
-import NavBody from "./navBody";
+import NavBody from "./common/navBody";
+import NavBrand from "./common/navBrand";
+import NavToggler from "./common/navToggler";
 
 class NavBar extends Component {
   state = {
@@ -26,34 +28,27 @@ class NavBar extends Component {
         ],
       },
     ],
+    isExpand: false,
+  };
+
+  handleToggle = (e) => {
+    this.setState({ isExpand: !this.state.isExpand });
   };
 
   render() {
+    console.log("this.state.isExpand", this.state.isExpand);
     return (
-      <nav className="navbar navbar-expand-md sticky-top fs-3">
-        <div className="container justify-content-end navbar__container">
-          {this.getNavButton()}
-          <NavBody navBarItems={this.state.navBarItems} />
+      <nav className="navbar">
+        <div className="navbar__header">
+          <NavBrand />
+          <NavToggler onClick={this.handleToggle} />
         </div>
+        <NavBody
+          isExpand={this.state.isExpand}
+          navBarItems={this.state.navBarItems}
+        />
       </nav>
     );
   }
-
-  getNavButton() {
-    return (
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i className="fa fa-bars"></i>
-      </button>
-    );
-  }
 }
-
 export default NavBar;

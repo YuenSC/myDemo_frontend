@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
+import "normalize.css";
 import "./js/aos";
 
 ReactDOM.render(

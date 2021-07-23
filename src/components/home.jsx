@@ -13,7 +13,7 @@ const Home = () => {
         imgAlt="Background image full of waves"
       >
         <Tagline
-          title="Welcome to the website of Cavlin Yuen"
+          title="Welcome to the website of Calvin Yuen"
           subtitle="Only Home, Post and Contact are available now"
         />
         <button onClick={scrollToHomeFirstItem} className="banner__button">
