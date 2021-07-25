@@ -36,7 +36,6 @@ class NavBar extends Component {
   };
 
   render() {
-    console.log("this.state.isExpand", this.state.isExpand);
     return (
       <nav className="navbar">
         <div className="navbar__header">

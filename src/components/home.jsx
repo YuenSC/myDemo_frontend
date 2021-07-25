@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import HomePageCards from "./homePageCards";
 import backgroundImage from "../images/matt-howard-UCDiLtfDRgU-unsplash.jpg";
 import Banner from "./common/banner";
 import Tagline from "./common/tagline";
-import scrollToHomeFirstItem from "../js/scrollToHomeFirstItem";
 
 const Home = () => {
+  const homeContainerRef = useRef();
+
+  const scrollToHomeFirstItem = () => {
+    const stickyNavBarHeight = document.querySelector(".navbar").offsetHeight;
+    window.scroll(0, homeContainerRef.current.offsetTop - stickyNavBarHeight);
+  };
+
   return (
     <div className="home">
       <Banner
@@ -24,7 +30,7 @@ const Home = () => {
           ></i>
         </button>
       </Banner>
-      <div className="container">
+      <div className="container" ref={homeContainerRef}>
         <HomePageCards />
         <div style={{ height: 300 }}></div>
       </div>
