@@ -3,11 +3,24 @@ import "../../styles/card.css";
 
 class Card extends Component {
   render() {
-    const { title, content, imgSource, imgAlt } = this.props;
+    const { title, content, imgSource, altImgSource, imgAlt } = this.props;
     return (
       <div className="myCard">
         <header className="myCard__header">
-          <img className="myCard__image" src={imgSource} alt={imgAlt} />
+          <picture>
+            <source
+              className="myCard__image"
+              srcset={imgSource}
+              type="image/webp"
+            />
+            <source
+              className="myCard__image"
+              srcset={altImgSource}
+              type="image/jpg"
+            />
+            <img className="myCard__image" src={altImgSource} alt={imgAlt} />
+          </picture>
+          {/* <img className="myCard__image" src={altImgSource} alt={imgAlt} /> */}
         </header>
         <div className="myCard__body">
           <h3 className="myCard__title">{title}</h3>

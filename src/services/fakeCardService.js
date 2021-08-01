@@ -1,7 +1,8 @@
 const cards = [
   {
     id: 1,
-    image: require("../images/derek-lee-XlFWv6CcGmA-unsplash.jpg"),
+    image: require("../images/derek-lee-XlFWv6CcGmA-unsplash.webp"),
+    image_alt: require("../images/derek-lee-XlFWv6CcGmA-unsplash.jpg"),
     alt: "This is a card image",
     title: "Card Title",
     content:
@@ -9,7 +10,8 @@ const cards = [
   },
   {
     id: 2,
-    image: require("../images/pawel-czerwinski-8hJ17db5qhA-unsplash.jpg"),
+    image: require("../images/pawel-czerwinski-8hJ17db5qhA-unsplash.webp"),
+    image_alt: require("../images/pawel-czerwinski-8hJ17db5qhA-unsplash.jpg"),
     alt: "This is a card image",
     title: "Card Title",
     content:
@@ -17,7 +19,8 @@ const cards = [
   },
   {
     id: 3,
-    image: require("../images/roman-kirienko-efOMjzhCKDM-unsplash.jpg"),
+    image: require("../images/roman-kirienko-efOMjzhCKDM-unsplash.webp"),
+    image_alt: require("../images/roman-kirienko-efOMjzhCKDM-unsplash.jpg"),
     alt: "This is a card image",
     title: "Card Title",
     content:

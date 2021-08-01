@@ -1,5 +1,4 @@
 .myCard {
-  height: 60vh;
   margin-top: 2rem;
   overflow: hidden;
   transition: box-shadow 0.3s;
@@ -7,7 +6,7 @@
 }
 
 .myCard__header {
-  height: 60%;
+  height: 30vh;
   position: relative;
 }
 

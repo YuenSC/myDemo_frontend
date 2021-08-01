@@ -12,6 +12,7 @@ class HomePageCards extends Component {
               title={card.title}
               content={card.content}
               imgSource={card.image.default}
+              altImgSource={card.image_alt.default}
               imgAlt={card.alt}
             />
           </div>
