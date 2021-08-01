@@ -1,0 +1,10 @@
+.imageContianer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.image {
+  width: 100%;
+  object-fit: contain;
+}

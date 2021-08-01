@@ -9,7 +9,7 @@ class NavBar extends Component {
   state = {
     navBarItems: [
       { label: "Home", link: "/" },
-      { label: "Post", link: "/posts" },
+      { label: "Images", link: "/images" },
       { label: "Contact", link: "/contact" },
       { label: "link", link: "/link" },
       {
