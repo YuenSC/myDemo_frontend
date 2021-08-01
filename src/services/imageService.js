@@ -1,9 +1,9 @@
 import HttpService from "./httpService";
 
-const apiEndPoint = "/photos";
+const apiEndPoint = "api/photos";
 
 export function getPhotos(query, page, perPage) {
   return HttpService.get(
-    `api/${apiEndPoint}?query=${query}&page=${page}&perPage=${perPage}`
+    `${apiEndPoint}?query=${query}&page=${page}&perPage=${perPage}`
   );
 }
