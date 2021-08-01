@@ -20,19 +20,21 @@ const Images = ({ query }) => {
   useEffect(() => {
     async function getPhotosAsync() {
       if (!reset.current && photos.length > 30) {
+        console.log("Images run to the bottom");
         setHasMore(false);
         setPage(1);
         return;
       }
       try {
         // Get new data
-        const { data } = await getPhotos(query, page, perPage);
+        const nextPage = reset.current ? 1 : page;
+        const { data } = await getPhotos(query, nextPage, perPage);
         const newPhotos = data.results;
 
         // Put new data based on boolean reset
-        const nextSetOfPhotos = !reset.current
-          ? [...new Set([...photos, ...newPhotos])]
-          : newPhotos;
+        const nextSetOfPhotos = reset.current
+          ? newPhotos
+          : [...new Set([...photos, ...newPhotos])];
         setPhotos(nextSetOfPhotos);
         reset.current = false;
       } catch (error) {
