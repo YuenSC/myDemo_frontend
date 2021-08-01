@@ -1,50 +1,64 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Image from "./image";
 
 import "../../styles/images.css";
 import { getPhotos } from "./../../services/imageService";
 
-const Images = () => {
-  const [hasMore, setHasMore] = useState(true);
+const Images = ({ query }) => {
   const [photos, setPhotos] = useState([]);
-  const [query, setQuery] = useState("cat");
+  const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
+  const reset = useRef(true);
   const perPage = 30;
 
   useEffect(() => {
-    if (photos.length > 90) setHasMore(false);
+    reset.current = true;
+    setHasMore(true);
+  }, [query]);
+
+  useEffect(() => {
     async function getPhotosAsync() {
+      if (!reset.current && photos.length > 30) {
+        setHasMore(false);
+        setPage(1);
+        return;
+      }
       try {
+        // Get new data
         const { data } = await getPhotos(query, page, perPage);
-        const photos = data.results;
-        setPhotos((prevPhotos) => [...new Set([...prevPhotos, ...photos])]);
+        const newPhotos = data.results;
+
+        // Put new data based on boolean reset
+        const nextSetOfPhotos = !reset.current
+          ? [...new Set([...photos, ...newPhotos])]
+          : newPhotos;
+        setPhotos(nextSetOfPhotos);
+        reset.current = false;
       } catch (error) {
-        console.log("Error in receiving photos");
+        console.log("Error in receiving photos", error);
       }
     }
     getPhotosAsync();
-  }, [page]);
+  }, [query, page]);
 
   return (
-    <div className="container">
-      <InfiniteScroll
-        className="imageContianer"
-        dataLength={photos.length}
-        next={() => setPage(page + 1)}
-        hasMore={hasMore}
-        loader={<h4>Loading...</h4>}
-        endMessage={
-          <p style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
-          </p>
-        }
-      >
-        {photos.map((photo) => (
-          <Image key={photo.id} photo={photo} />
-        ))}
-      </InfiniteScroll>
-    </div>
+    <InfiniteScroll
+      className="imageContianer"
+      dataLength={photos.length}
+      next={() => setPage(page + 1)}
+      hasMore={hasMore}
+      loader={<h4 className="imageContianer__loader">Loading...</h4>}
+      endMessage={
+        <p className="imageContianer__endMessage">
+          <b>Yay! You have seen it all</b>
+        </p>
+      }
+    >
+      {photos.map((photo) => (
+        <Image key={photo.id} photo={photo} />
+      ))}
+    </InfiniteScroll>
   );
 };
 
