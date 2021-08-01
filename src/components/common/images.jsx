@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Image from "./image";
-import HttpService from "./../../services/httpService";
 
 import "../../styles/images.css";
+import { getPhotos } from "./../../services/imageService";
 
 const Images = () => {
   const [hasMore, setHasMore] = useState(true);
@@ -13,16 +13,17 @@ const Images = () => {
   const perPage = 30;
 
   useEffect(() => {
-    if (photos.length > 210) setHasMore(false);
-    async function getPhotos() {
-      console.log();
-      const { data } = await HttpService.get(
-        `/api/photos?query=${query}&page=${page}&perPage=${perPage}`
-      );
-      const photos = data.results;
-      setPhotos((prevPhotos) => [...new Set([...prevPhotos, ...photos])]);
+    if (photos.length > 90) setHasMore(false);
+    async function getPhotosAsync() {
+      try {
+        const { data } = await getPhotos(query, page, perPage);
+        const photos = data.results;
+        setPhotos((prevPhotos) => [...new Set([...prevPhotos, ...photos])]);
+      } catch (error) {
+        console.log("Error in receiving photos");
+      }
     }
-    getPhotos();
+    getPhotosAsync();
   }, [page]);
 
   return (
