@@ -14,7 +14,7 @@ const Images = ({ query }) => {
 
   useEffect(() => {
     reset.current = true;
-    photosLength.current += perPage;
+    photosLength.current = 0;
     setHasMore(true);
   }, [query]);
 
@@ -43,6 +43,7 @@ const Images = ({ query }) => {
     getPhotosAsync();
   }, [query, page]);
 
+  if (photos.length === 0) return null;
   return (
     <InfiniteScroll
       className="imageContianer"
