@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../../styles/card.css";
 
 class Card extends Component {
   render() {
@@ -10,12 +9,12 @@ class Card extends Component {
           <picture>
             <source
               className="myCard__image"
-              srcset={imgSource}
+              srcSet={imgSource}
               type="image/webp"
             />
             <source
               className="myCard__image"
-              srcset={altImgSource}
+              srcSet={altImgSource}
               type="image/jpg"
             />
             <img className="myCard__image" src={altImgSource} alt={imgAlt} />

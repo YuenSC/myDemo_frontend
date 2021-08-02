@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/tagline.css";
 
 const Tagline = ({ title, subtitle }) => {
   return (

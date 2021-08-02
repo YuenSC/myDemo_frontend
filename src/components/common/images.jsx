@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Image from "./image";
 
-import "../../styles/images.css";
 import { getPhotos } from "./../../services/imageService";
 
 const Images = ({ query }) => {

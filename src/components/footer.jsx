@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import scrollToTop from "../js/scrollToTop";
-import "../styles/footer.css";
 
 class Footer extends Component {
   state = {

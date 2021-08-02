@@ -1,6 +1,6 @@
 .navbar {
   align-items: center;
-  background-color: hsl(210, 100%, 20%);
+  background-color: $color-secondary;
   display: flex;
   font-weight: bolder;
   justify-content: space-between;
@@ -30,7 +30,7 @@
 }
 
 .navbar__brand i {
-  color: white;
+  color: $color-primary;
 }
 
 .navbar__list {

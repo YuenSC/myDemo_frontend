@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import "../styles/navbar.css";
 import NavBody from "./common/navBody";
 import NavBrand from "./common/navBrand";
 import NavToggler from "./common/navToggler";

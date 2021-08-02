@@ -8,6 +8,8 @@ import ImagesPage from "./components/imagesPage";
 import NavBar from "./components/navbar";
 import scrollLib from "./js/aos";
 
+import "./styles/all.scss";
+
 function App() {
   scrollLib.refresh();
   return (

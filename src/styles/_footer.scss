@@ -1,3 +1,5 @@
+@import "config";
+
 .footer {
   margin-top: 1rem;
   margin-bottom: 3rem;
@@ -26,7 +28,7 @@
 .footer__item {
   font-size: 1rem;
   display: inline-block;
-  border-right: 1px solid hsl(0, 0%, 50%);
+  border-right: 1px solid $color-border;
   padding: 0.5rem 1rem;
 }
 
@@ -37,7 +39,7 @@
 .footer__link {
   cursor: pointer;
   text-decoration: none;
-  color: #353535;
+  color: $color-light;
 }
 
 .footer__lineBreak,
