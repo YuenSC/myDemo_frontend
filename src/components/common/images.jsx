@@ -9,36 +9,36 @@ const Images = ({ query }) => {
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
   const reset = useRef(true);
+  const photosLength = useRef(0);
   const perPage = 30;
 
   useEffect(() => {
     reset.current = true;
+    photosLength.current += perPage;
     setHasMore(true);
   }, [query]);
 
   useEffect(() => {
     async function getPhotosAsync() {
-      if (!reset.current && photos.length > 30) {
-        console.log("Images run to the bottom");
+      if (query === "") return;
+      if (!reset.current && photosLength.current > 30) {
         setHasMore(false);
         setPage(1);
         return;
       }
       try {
-        // Get new data
         const nextPage = reset.current ? 1 : page;
         const { data } = await getPhotos(query, nextPage, perPage);
         const newPhotos = data.results;
 
-        // Put new data based on boolean reset
-        const nextSetOfPhotos = reset.current
-          ? newPhotos
-          : [...new Set([...photos, ...newPhotos])];
-        setPhotos(nextSetOfPhotos);
+        setPhotos((prevPhotos) =>
+          reset.current
+            ? newPhotos
+            : [...new Set([...prevPhotos, ...newPhotos])]
+        );
         reset.current = false;
-      } catch (error) {
-        console.log("Error in receiving photos", error);
-      }
+        photosLength.current += perPage;
+      } catch (error) {}
     }
     getPhotosAsync();
   }, [query, page]);

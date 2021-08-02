@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 axios.interceptors.response.use(null, (error) => {
-  //   if (!error.response) toast.error("There is an unexpected error");
+  console.log("There is an error.", error);
   return Promise.reject(error);
 });
 
