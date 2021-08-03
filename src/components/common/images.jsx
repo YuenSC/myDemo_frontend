@@ -43,14 +43,17 @@ const Images = ({ query }) => {
     getPhotosAsync();
   }, [query, page]);
 
-  if (photos.length === 0) return null;
   return (
     <InfiniteScroll
       className="imageContianer"
       dataLength={photos.length}
       next={() => setPage(page + 1)}
       hasMore={hasMore}
-      loader={<h4 className="imageContianer__loader">Loading...</h4>}
+      loader={
+        <h4 className="imageContianer__loader">
+          {query !== "" && "Loading..."}
+        </h4>
+      }
       endMessage={
         <p className="imageContianer__endMessage">
           <b>Yay! You have seen it all</b>
